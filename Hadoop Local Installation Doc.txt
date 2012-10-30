@@ -1,0 +1,85 @@
+Pre-Requisites:
+------------------------
+1. Linux Operating System (Ubuntu)
+2. Java
+3. ssh
+4. rsync
+
+=====================================================
+Installing java:
+cmd: sudo apt-get install java-package
+
+Installing ssh:
+cmd: service ssh start
+
+creating passwordlessssh:
+cmd: ssh-keygen -t rsa
+it will to enter password, here we have to press enter without entering our password:
+
+Testing our ssh:
+cmd: ssh username@hostname
+
+To get hostname:
+cmd: hostname
+
+-----------------------------------------------
+steps for downlaoding and installing Hadoop
+---------------------------------------------
+Download Apache Hadoop from hadoop.apache.org
+preferably hadoop-1.x.x.tar
+
+create bigdata under your home directory /home/username
+cmd: mkdir bigdata
+cmd: cd bigdata
+
+Downloading the Hadoop tar file apache site:
+cmd: wget http://apache.techartifact.com/mirror/hadoop/common/hadoop-1.0.4/hadoop-1.0.4.tar.gz
+
+extract the tar file to hadoop-1.x.x directory
+cmd: tar -xvf hadoop-1.x.x.tar
+
+Change the directory permissions recursively to 755
+755 means owner has full permissions, group and rest of the world have only read and execute permissions
+
+cmd: chmod -R 755 hadoop-1.x.x
+======================================================================
+Installation Modes:
+-------------------
+1. Local mode
+2. Pseudo Distributed Mode
+3. Distributed Mode
+-----------------------
+We are having applying MapReduce on our Local file system:
+
+In hadoop.1.x.x directory, we one sub directory called conf
+In conf directory, we have files:
+
+1. hadoop-env.sh
+2. core-site.xml
+3. hdfs-site.xml
+4. mapred-site.xml
+5. masters
+6. slaves
+
+hadoop-env.sh --> For setting, hadoop environment variables
+core-site.xml --> For setting, Hadoop cluster Information related configuration parameters
+hdfs-site.xml --> For setting, HDFS related configuration parameters
+mapered-site.xml --> For setting, Map Reduce related configuration parameters
+slaves --> All domain names (IP info) of slave nodes (Data Node + Task Tracker)
+masters --> Domain name of Secondary Name Node
+
+Default content in these files are:
+
+all the xml files are with empty configuration information
+both masters and slaves have hostname as localhost
+
+In hadoop-env.sh --> All the default environment variables are configured.
+
+================================================================
+For running hadoop in local mode, only we have to modify hadoop-env.sh
+In hadoop-env.sh, we have to Set JAVA_HOME
+uncomment the JAVA_HOME and replace java path with our Java home:
+
+Location of java home:
+/usr/lib/jvm/javapackage/
+
