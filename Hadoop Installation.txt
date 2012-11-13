@@ -86,4 +86,49 @@ Location of java home:
 
 For running Hadoop in pseudo distributed mode, we have to modify hadoop-env.sh.
 In hadoop-env.sh, we have to Set JAVA_HOME.
-We have to modify the some inportant configuration parameters in core-site.xml, hdfs-site.xml, mapred-site.xm
+
+We have to modify the some inportant configuration parameters in core-site.xml, hdfs-site.xml, mapred-site.xml, slaves, masters
+
+In core-site.xml:
+<parameter><name>fs.default.name</name><value>hdfs://hostname:port</value></parameter>
+
+In mapred-site.xml:
+<parameter><name>mapred.job.tracker</name><value>hostname:port</value></parameter>
+
+In hdfs-site.xml:
+<parameter><name>dfs.replication</name><value>1</value></parameter>
+<parameter><name>dfs.name.dir</name><value>path of namenode[namenode meta information directory] directory</value></parameter>
+<parameter><name>dfs.data.dir</name><value>path of datanode[actual data location] directory</value></parameter>
+
+slaves:
+hostname
+
+masters:
+hostname
+
+For running Hadoop in pseudo distributed mode, we have to modify hadoop-env.sh.
+In hadoop-env.sh, we have to Set JAVA_HOME.
+
+copy the entire hadoop-1.x.x directory to the same path in the slave machines like
+in master /home/hadoop/bigdata/hadoop-1.x.x. The absolute path of hadoop-1.x.x is same on all machines.
+
+no change to core-site.xml
+no change to mapred-site.xml
+for hdfs-site.xml aslo changes are not required. If we want more replication value, we can change the dfs.replication parameter.
+<parameter><name>dfs.replication</name><value>replication factor</value></parameter>
+
+masters file:
+Master Node : Enter the secondary namenode machine hostname
+Slave Nodes: Empty the file
+
+slaves file
+Master Node: Enter all the list of Slave Node machines hostnames
+slave1
+slave2
+.
+.
+.
+
+Slave Nodes: Empty the file
+
+Please follow the above guide lines while installing in all modes.
