@@ -42,7 +42,7 @@ public class OuterClass
 		{
 			Initialization before Map Process......
 		}
-		public void map(keyin key, valuein value Context context) throws IOException, InterruptedException
+		public void map(keyin key, valuein value, Context context) throws IOException, InterruptedException
 		{
 			Map level Business logic
 		}
@@ -70,7 +70,7 @@ MapReduce Framework provides
 		{
 			Initialization before Reduce Process......
 		}
-		public void reduce(keyin key, Iterable<valuein> values, Context context) throws IOException, InterruptedException
+		public void reduce(keyin key, Iterable<valuein> values, Context context) throws IOException,InterruptedException
 		{
 			Reduce level Business logic
 		}
