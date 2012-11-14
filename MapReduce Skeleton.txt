@@ -1,16 +1,18 @@
 Map Ruduce Program skeleton:
 ----------------------------
 
-we have three things in Map Reudce program
+we have three things in Map Reudce Program
 
 1. MapClass
 2. ReduceClass
 3. Driver
 
-we have ability to all these three things in one Java class
+We have two approaches for writing Map Reduce Programs
 
 Approach 1:
------------
+----------
+we have ability to use all these three things in one Java class
+
 class OuterClass
 {
 	MapClass
