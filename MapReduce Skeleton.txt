@@ -18,17 +18,18 @@ class OuterClass
 	Driver
 }
 
-	[OR]
-approach 2:
+[OR]
+
+Approach 2:
 -----------
 we have an alternative way with three individual classes..
 
-	MapClass
-	ReudceClass
-	SomeClass
-	{
-		Driver
-	}
+MapClass
+ReudceClass
+SomeClass
+{
+	Driver
+}
 ====================================================================
 import all corresponding java and hadoop packgaes;
 
@@ -46,7 +47,7 @@ public class OuterClass
 			Map level Business logic
 		}
 		
-		public void close()
+		public void cleanup()
 		{
 			to release any resources.... before closing map process
 		}
@@ -74,7 +75,7 @@ MapReduce Framework provides
 			Reduce level Business logic
 		}
 
-		public void close()
+		public void cleanup()
 		{
 			to release any resources.... before closing reduce process
 		}
@@ -104,15 +105,10 @@ MapReduce Framework provides
 	}
 }
 
-
-
-
-
 =======================================================
 we have 100% in map and reduce phases.
 
-In map, we have only one step i.e Filter and transform
-
+In map, we have only one step.
 
 In reduce, we have three thins
 
@@ -120,4 +116,4 @@ In reduce, we have three thins
 	sort -->shuffle
 	reduce  --> aggregation
 
-map 100% equals to reduce < 33%
+map 100% equals to reduce < 33.33%
