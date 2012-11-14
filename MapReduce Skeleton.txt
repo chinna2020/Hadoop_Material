@@ -1,7 +1,7 @@
 Map Ruduce Program skeleton:
 ----------------------------
 
-we have three in Map Reudce program
+we have three things in Map Reudce program
 
 1. MapClass
 2. ReduceClass
