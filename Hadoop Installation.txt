@@ -10,6 +10,7 @@ Installing java:
 cmd: sudo apt-get install java-package
 
 Installing ssh:
+cmd: sudo apt-get install ssh
 cmd: service ssh start
 
 creating passwordlessssh:
